@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["network", "cpu", "memory", "battery", "clock"],
+	"modules-right": ["network", "cpu", "memory","temperature", "battery", "clock"],
 	
   "wireplumber": {
     "tooltip": false,
@@ -68,6 +68,14 @@
       "max-length": 10
   },
 
+  "temperature": {
+      // "thermal-zone": 2,
+      // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "{temperatureC}°C {icon}",
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": ["", "", ""]
+   }, 
 
   "custom/media": {
       "interval": 30,
@@ -89,7 +97,6 @@
       "on-click": "sh ~/.config/rofi/launchers/type-2/launcher.sh",
       "on-click-right": "killall rofi"
   },
-
 
   "hyprland/workspaces": {
     "format": "{icon}",
