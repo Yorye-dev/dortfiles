@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 8;
+  border-radius: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 16px;
   min-height: 20px;
@@ -169,12 +169,9 @@ window#waybar.hidden {
   margin-top: 6px;
   margin-left: 8px;
   padding-left: 10px;
-  padding-right: 5px;
-  border-radius: 10px;
+  padding-right: 10px;
   transition: none;
   color: #fe8019;
-  /*default: color: #89dceb; */
-  background: #161320;
 }
 
 #custom-media {
@@ -187,4 +184,15 @@ window#waybar.hidden {
   transition: none;
   color: #161320;
   background: #f2cdcd;
+}
+#temperature {
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #161320;
+  background: #cc241d;
 }
