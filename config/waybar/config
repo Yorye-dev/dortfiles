@@ -1,64 +1,59 @@
 {
-	"layer": "top",
-	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["network", "cpu", "memory","temperature", "battery", "clock"],
-	
-  "wireplumber": {
-    "tooltip": false,
-    "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-muted": "󰝟 {volume}%",
-    "on-click":"kitty -- alsamixer -V all",
-    "format-icons": {
-      "default": ["", "", ""]
-    }
-  },
+ "layer": "top",
+ "modules-left": ["custom/launcher", "backlight", "wireplumber"],
+ "modules-center": ["hyprland/workspaces"],
+ "modules-right": ["network", "cpu", "memory","temperature", "battery", "clock"],
+ 
+ "wireplumber": {
+ 	"tooltip": false,
+	"scroll-step": 5,
+	"format": "{icon} {volume}%",
+	"format-muted": "󰝟 {volume}%",
+	"on-click":"slider",
+	"format-icons": {
+		"default": ["", "", ""]
+	}
+ },
 
+ "network": {
+ 	"tooltip": false,
+    	"format-wifi": "  {essid}",
+    	"format-ethernet": "",
+    	"on-click":"kitty -- nmtui",
+ },
 
-  "network": {
-    "tooltip": false,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "",
-    "on-click":"kitty -- nmtui",
-	},
-
-
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
+ "backlight": {
+ 	"tooltip": false,
+	"format": " {}%",
+	"interval":1,
         "on-scroll-up": "light -A 5",
 		"on-scroll-down": "light -U 5"
-	},
+ },
 
+ "battery": {
+	"states": {
+		"full": 100,
+		"good": 95,
+		"decent": 50,
+		"warning": 30,
+		"critical": 10
+      	},
+	"format": "{icon}  {capacity}%",
+      	"format-time": "{H} h {M} min",
+      	"format-alt": "{icon} {time}",
+      	"format-icons": ["", "", "", "", ""]
+ },
 
-  "battery": {
-      "states": {
-          "full": 100,
-          "good": 95,
-          "decent": 50,
-          "warning": 30,
-          "critical": 20
-      },
-      "format": "{icon}  {capacity}%",
-      "format-time": "{H} h {M} min",
-      "format-alt": "{icon} {time}",
-      "format-icons": ["", "", "", "", ""]
-  },
-
-
-  "clock": {
-      "format": "{:%H:%M}",
-      "format-alt": "{:%m-%d-%Y}"
-  },
-
-
-  "cpu": {
-      "interval": 15,
-      "format": "  {}%",
-      "max-length": 10,
-      "on-click":"kitty -- btop"
+ "clock": {
+ 	"format": "{:%H:%M}",
+      	"format-alt": "{:%m-%d-%Y}"
+ },
+ 
+ "cpu": {
+      	"interval": 15,
+      	"format": "  {}%",
+      	"max-length": 10,
+      	"on-click":"kitty -- btop"
   },
 
 
@@ -69,12 +64,10 @@
   },
 
   "temperature": {
-      // "thermal-zone": 2,
-      // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
       "critical-threshold": 80,
       "format-critical": "{temperatureC}°C {icon}",
       "format": "{temperatureC}°C {icon}",
-      "format-icons": ["", "", ""]
+      "format-icons": ["", ""]
    }, 
 
   "custom/media": {
