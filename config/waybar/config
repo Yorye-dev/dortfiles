@@ -9,7 +9,7 @@
 	"scroll-step": 5,
 	"format": "{icon} {volume}%",
 	"format-muted": "󰝟 {volume}%",
-	"on-click":"slider",
+	"on-click":"",
 	"format-icons": {
 		"default": ["", "", ""]
 	}
@@ -25,9 +25,7 @@
  "backlight": {
  	"tooltip": false,
 	"format": " {}%",
-	"interval":1,
-        "on-scroll-up": "light -A 5",
-		"on-scroll-down": "light -U 5"
+	"scroll-step": 5
  },
 
  "battery": {
